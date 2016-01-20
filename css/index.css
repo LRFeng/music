@@ -1,0 +1,143 @@
+*{
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+/* *是通配符，所有的元素都会被选择到，防止浏览器加上默认的样式 */
+
+body{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+/* 我们把宽度和高度都设为100%，这样会根据浏览器宽度和高度自动调整
+   overflow：hidden 表示超出边界的元素会被隐藏*/
+
+#bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+/* 设置背景图为绝对定位，宽度和高度自动适应屏幕大小 */
+
+#play_border{
+  width: 75%;
+  height: 90%;
+  top: 1%;
+  left: 0.5%;
+  border-radius: 5px;
+  border: 2px solid #777;
+  box-shadow: 0px 0px 25px #777;
+}
+/* border-radius:是圆角属性，使用它很容易做出圆角效果，它的值是圆角的半径*/
+
+
+#play_border p{
+  text-align: center;
+}
+
+#lrc_border{
+position: relative;
+overflow: hidden;
+padding: 10px;
+width: 90%;
+height: 80%;
+top: 1%;
+margin: 0 auto;
+border-radius: 5px;
+transition: 2s;
+}
+ /* 这是控制歌词显示位置的，这里也使用了overflow:hidden，因为我们里面的
+歌词向上移动的时候会超出这个边界，所以让超出的部分隐藏，既不可见，这样
+就实现了歌词往上滚动的效果，你可以控制这个DIV的定位，让歌词在不同的地方显示*/
+
+        #lrc_border p{
+            position: relative;
+            text-align: center;
+            margin: 15px 2px 15px 2px;
+        }
+        #lrc_move{
+            position: relative;
+            margin: 0 auto;
+            width: 100%;
+            transition: 1s;
+            top: 100px;
+        }
+        /*这个DIV是真正写歌词的，一句歌词就是一个p标签，全部放到这里面
+        transition:1s 也是css3的属性，它的作用是让属性值过渡改变，比如当你
+        把top从0px变为100px的时候，如果不使用这个属性，则立马就改变了，使用了
+        这个属性后，top会从0px开始，在1s的时间内慢慢改变，所以就产生了慢慢
+        往下移动的效果*/
+        #lrc_move p{
+            transition: 1s;
+            font-size: 20px;
+            font-family: "宋体";
+            text-shadow: 0px 0px 5px #555;
+        }
+        /*设置歌词文字的属性，text-shadow:0px 0px 5px #555;这也是css3属性，用来设置文字
+        阴影，前两个参数是阴影的top,left的偏移值，以文字为基准，第三个是模糊半径，半径越大，阴影越模糊，最后一个
+        参数是阴影的颜色*/
+        #button{
+            position: relative;
+            top: 30px;
+            height: 80px;
+        }
+        #button rowspan{
+            text-decoration: none;
+            display: inline-block;
+            transition: 2s;
+            cursor: pointer;
+            opacity: 0.3;
+            width: 70px;
+            height: 40px;
+            font-weight: bold;
+            font-size: 30px;
+            color: white;
+            text-shadow: 0 0 15px #333;
+        }
+        /*opacity:0.3是透明度，设置元素的透明度，值为0到1，可以用小数*/
+        #button rowspan:hover{
+            transition: 2s;
+            opacity: 0.8;
+              color: #ddd;
+        }
+        /*这是伪类，就是当鼠标悬停在元素上面时，用这里的属性替换原来的属性，移开的时候又会变为原来的属性*/
+
+#list{
+    position: absolute;
+    overflow: auto;
+    width: 25%;
+    height: 97.6%;
+    top: 1%;
+    right: 0.5%;
+    border-radius: 5px;
+    border: 2px solid #666;
+    box-shadow: 5px 5px 15px 0px #666;
+}
+/* 这里使用了overflow:auto;这是表示如果内容超出边界，则旁边会出现一个滚动条，可以滚动查看
+   我设置定位为绝对定位，且right:0.5%;这样它就会显示在右边，而歌词显示在左边
+   box-shadow:5px 5px 15px 0px;是盒子阴影，和text-shadow用法一样*/
+#list p{
+    font-size: 20px;
+    color: #222;
+    text-shadow: 2px 2px 5px #999;
+    padding-left: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+#list p:hover{
+    background-color: white;
+    opacity: 0.5;
+    transition: 0.15s;
+}
+/* 同样，我们给列表的p标签加个伪类效果，这样当你鼠标移上去的时候就会有选中的效果 */
+
+
+#process_img{
+    position: absolute;
+    bottom: 0px;
+    width: 5%;
+    z-index: 999;
+    transition: 2s;
+}
+/* 我们把定位设置成绝对定位，这样方便改变它的位置，才不会影响其他元素的位置 */

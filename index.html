@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>歌词播放器</title>
+    <script  type="text/jscript" src="js/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+</head>
+    
+<body>
+    <img src="http://lansky-forum.stor.sinaapp.com/bg/5.jpg" id="bg">
+    <div class="play_border">
+        <p>
+           <audio src="mp3/%E9%83%AD%E9%9D%99%20-%20%E4%BD%A0%E7%9A%84%E9%A6%99%E6%B0%94.mp3" autoplay="autoplay" id="media"></audio> 
+        </p>
+     
+        <div id="irc_border">
+            <div id="irc_move"></div>
+        </div>
+        <p id="button">
+          <rowspan onclick="play()" id="play">Play</rowspan>
+          <rowspan onclick="stop()">stop</rowspan>     
+        </p>
+         <img src="http://lansky-forum.stor.sinaapp.com/bg/p1.gif" id="process_img" />
+    </div>
+    
+    <div id="list">
+        <!--用来显示歌曲列表的-->
+    </div>    
+</body>
+</html>
